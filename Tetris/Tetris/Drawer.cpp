@@ -53,7 +53,7 @@ void Drawer::Draw()
     printf(_drawBoard);
 }
 
-void Drawer::Draw(const char* board)
+void Drawer::UpdateBoard(const char* board)
 {
     for (int i = 0; i < NUM_ROWS; ++i) {
         char* dst = _rows[i];
@@ -61,5 +61,4 @@ void Drawer::Draw(const char* board)
             *dst++ = *board++;
         }
     }
-
 }

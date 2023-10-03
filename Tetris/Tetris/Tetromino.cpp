@@ -2,18 +2,13 @@
 
 
 
-Tetromino::Tetromino(Math::Coordinate startingPosition)
+Tetromino::Tetromino()
+	: _eSpin(ESpin::ONE)
 {
-    _blocks[0] = startingPosition;
-    _blocks[1] = startingPosition;
-    _blocks[2] = startingPosition;
-    _blocks[3] = startingPosition;
-    
-    _blocks[1].y += 1;
-    _blocks[2].y += 2;
-    _blocks[3].y += 3;
-    
-    _eState = EDefaultState::Vertical;
+    _blocks[0] = Math::Coordinate{ 2, 2 };
+    _blocks[1] = Math::Coordinate{ 2, 2 };
+    _blocks[2] = Math::Coordinate{ 2, 2 };
+    _blocks[3] = Math::Coordinate{ 2, 2 };
 }
 
 
@@ -63,42 +58,17 @@ bool Tetromino::MoveRight()
 	return true;
 }
 
-bool Tetromino::Rotate()
-{
-    switch (_eState) {
-        case Vertical:
-            _blocks[1] = _blocks[0];
-            _blocks[2] = _blocks[0];
-            _blocks[3] = _blocks[0];
-            
-            _blocks[1].x += 1;
-            _blocks[2].x += 2;
-            _blocks[3].x += 3;
-            
-            _eState = Horizontal;
-            break;
-        case Horizontal:
-            _blocks[1] = _blocks[0];
-            _blocks[2] = _blocks[0];
-            _blocks[3] = _blocks[0];
-            
-            _blocks[1].y += 1;
-            _blocks[2].y += 2;
-            _blocks[3].y += 3;
-            
-            _eState = Vertical;
-            break;
-        default:
-            return false;
-    }
-    return true;
-}
+
 
 
 void Tetromino::Draw(char* board)
 {
     for (int i = 0; i < NUM_BLOCKS; ++i) {
-        board[NUM_COLS * _blocks[i].y + _blocks[i].x] = '*';
+		unsigned int x = _blocks[i].x;
+		unsigned int y = _blocks[i].y;
+		if (x < NUM_COLS && x >= 0 && y < NUM_COLS && y >= 0) {
+			board[NUM_COLS * y + x] = '*';
+		}
     }
 }
 

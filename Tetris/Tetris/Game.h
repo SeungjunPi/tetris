@@ -1,12 +1,7 @@
 //
-//  Game.hpp
-//  Tetris_mac
-//
-//  Created by jun on 9/30/23.
-//
 
-#ifndef Game_hpp
-#define Game_hpp
+#ifndef Game_h
+#define Game_h
 
 #include "Math.h"
 #include "Macro.h"
@@ -16,15 +11,22 @@ class Game
 {
 public:
     Game();
+    ~Game();
     
+    bool Run();
     bool Rotate();
     const char* GetBoard();
 private:
     char* _drawBoardBackground;
     char* _drawBoardWithTetromino;
-    Tetromino _current;
+
+    Tetromino* _currentMino;
+    Tetromino** _minos;
+    size_t _minoCount;
+
+    bool ShuffleMinos();
 };
 
 
 
-#endif /* Game_hpp */
+#endif /* Game_h */

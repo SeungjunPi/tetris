@@ -7,7 +7,7 @@
 class Tetromino
 {
 public:
-    Tetromino(Math::Coordinate startingPosition);
+    Tetromino();
 
     bool MoveDown();
     bool MoveRight();
@@ -15,19 +15,22 @@ public:
     
     void Draw(char* board);
 
-    virtual bool Rotate();
+    virtual bool Rotate() { return false; }
 //    virtual bool IsRotatable();
+protected:
+    Math::Coordinate _blocks[NUM_BLOCKS];
 
+    enum ESpin
+    {
+        ONE = 0,
+        TWO = 1,
+        THR = 2,
+        FOU = 3,
+    };
+
+    ESpin _eSpin;
 
 private:
-    enum EDefaultState {
-        Vertical = 0,
-        Horizontal = 1,
-    };
-    
-    Math::Coordinate _blocks[NUM_BLOCKS];
-    EDefaultState _eState;
-
 };
 
 
