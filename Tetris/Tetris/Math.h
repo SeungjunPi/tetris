@@ -3,10 +3,11 @@ class Math
 {
 public:
     struct Coordinate {
-        unsigned int x;
-        unsigned int y;
+        short x;
+        short y;
     };
 
+    static void Rotate90(Coordinate* coordinates, const Coordinate pivot);
 
 };
 

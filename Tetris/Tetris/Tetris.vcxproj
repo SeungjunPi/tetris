@@ -129,18 +129,30 @@
   <ItemGroup>
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="JMino.cpp" />
+    <ClCompile Include="LMino.cpp" />
+    <ClCompile Include="SMino.cpp" />
+    <ClCompile Include="SquareMino.cpp" />
     <ClCompile Include="StraightMino.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Tetromino.cpp" />
+    <ClCompile Include="TMino.cpp" />
+    <ClCompile Include="ZMino.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="JMino.h" />
+    <ClInclude Include="LMino.h" />
+    <ClInclude Include="SMino.h" />
+    <ClInclude Include="SquareMino.h" />
     <ClInclude Include="StraightMino.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Tetromino.h" />
+    <ClInclude Include="TMino.h" />
+    <ClInclude Include="ZMino.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

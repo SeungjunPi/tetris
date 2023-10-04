@@ -1,14 +1,11 @@
 #pragma once
 
-
 #include "Tetromino.h"
 
-
-class StraightMino : public Tetromino
+class TMino : public Tetromino
 {
 public:
-    StraightMino();
+    TMino();
     bool Rotate() override final;
-private:
-    
 };
+

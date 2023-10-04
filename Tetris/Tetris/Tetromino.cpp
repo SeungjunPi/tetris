@@ -5,10 +5,10 @@
 Tetromino::Tetromino()
 	: _eSpin(ESpin::ONE)
 {
-    _blocks[0] = Math::Coordinate{ 2, 2 };
-    _blocks[1] = Math::Coordinate{ 2, 2 };
-    _blocks[2] = Math::Coordinate{ 2, 2 };
-    _blocks[3] = Math::Coordinate{ 2, 2 };
+    _blocks[0] = Math::Coordinate{ (short)2, (short)2 };
+    _blocks[1] = Math::Coordinate{ (short)2, (short)2 };
+    _blocks[2] = Math::Coordinate{ (short)2, (short)2 };
+    _blocks[3] = Math::Coordinate{ (short)2, (short)2 };
 }
 
 

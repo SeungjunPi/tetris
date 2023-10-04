@@ -5,7 +5,12 @@
 #include "Drawer.h"
 
 #include "StraightMino.h"
-
+#include "SquareMino.h"
+#include "JMino.h"
+#include "LMino.h"
+#include "TMino.h"
+#include "SMino.h"
+#include "ZMino.h"
 
 Game::Game()
 {
@@ -21,7 +26,7 @@ Game::Game()
 
     _minos = new Tetromino*[7];
     for (int i = 0; i < 7; ++i) {
-        _minos[i] = new StraightMino(); // Todo: Mino 종류별 구현 후 넣기
+        _minos[i] = new ZMino(); // Todo: Mino 종류별 구현 후 넣기
     }
 
     _currentMino = _minos[0];
